@@ -119,7 +119,15 @@ module.exports = class SingleSpaGenerator extends Generator {
             type: "list",
             name: "framework",
             message: "Which framework do you want to use?",
-            choices: ["none", "react", "vue", "angular", "svelte", "other"],
+            choices: [
+              "none",
+              "react",
+              "vue",
+              "angular",
+              "svelte",
+              "alpinejs",
+              "other",
+            ],
           },
         ]);
         this.options.framework = answers.framework;
@@ -176,7 +184,7 @@ async function runFrameworkGenerator() {
         type: "list",
         name: "framework",
         message: "Which framework do you want to use?",
-        choices: ["react", "vue", "angular", "svelte", "other"],
+        choices: ["react", "vue", "angular", "svelte", "alpinejs", "other"],
       },
     ]);
 
@@ -224,6 +232,9 @@ async function runFrameworkGenerator() {
         },
         this.options
       );
+      break;
+    case "alpinejs":
+      console.log("alpine :)");
       break;
     case "other":
       console.log(
